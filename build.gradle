@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+apply plugin: 'java-library'
+
+group 'com.mangeorge'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: "5.2.10.Final"
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+    api(group: 'org.apache.solr', name: 'solr-solrj', version: "8.11.1")
+    api(group: 'org.apache.solr', name: 'solr-core', version: "8.11.1")
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
